@@ -18,7 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Intent;
-
+import android.graphics.Color;
 
 public class CardIO extends CordovaPlugin {
     
@@ -30,6 +30,7 @@ public class CardIO extends CordovaPlugin {
     public static Boolean confirm;
     public static Boolean hideLogo;
     public static Boolean suppressManual;
+    public static int guideColor;
     
     @Override
     public boolean execute(String action, JSONArray args,
@@ -48,6 +49,8 @@ public class CardIO extends CordovaPlugin {
                 confirm = config.getBoolean("suppressConfirm");
                 hideLogo = config.getBoolean("hideLogo");
                 suppressManual = config.getBoolean("suppressManual");
+                guideColor = Color.parseColor(config.getString("guideColor"));
+
             
                 Intent scanIntent = new Intent(cordova.getActivity(),
                                            CardIOMain.class);

@@ -25,7 +25,7 @@ public class CardIOMain extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //		setContentView(R.layout.activity_main);
+        //      setContentView(R.layout.activity_main);
         
         Intent scanIntent = new Intent(CardIOMain.this, CardIOActivity.class);
         
@@ -35,6 +35,7 @@ public class CardIOMain extends Activity {
         scanIntent.putExtra(CardIOActivity.EXTRA_SUPPRESS_CONFIRMATION, CardIO.confirm);
         scanIntent.putExtra(CardIOActivity.EXTRA_SUPPRESS_MANUAL_ENTRY, CardIO.suppressManual);
         scanIntent.putExtra(CardIOActivity.EXTRA_HIDE_CARDIO_LOGO, CardIO.hideLogo);
+        scanIntent.putExtra(CardIOActivity.EXTRA_GUIDE_COLOR, CardIO.guideColor);
         
         // MY_SCAN_REQUEST_CODE is arbitrary and is only used within this activity.
         startActivityForResult(scanIntent, MY_SCAN_REQUEST_CODE);
